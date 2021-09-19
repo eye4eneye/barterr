@@ -1,0 +1,196 @@
+<div class="outer">
+  <div class="banner">
+    <img src="assets/images/barterrLogo2.jpg" width="400px" height="400px" />
+    <div class="description">
+      <h1>Sneaker Trading, Made Simple</h1>
+      <h3>Test your offers with our trading algorithm,
+        to determine a fair and equal sneaker trade.</h3>
+        <div>
+          <button mat-raised-button color="primary" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="c">
+
+    <div class="box">
+      <div>
+        <h3 class="sub">Add Your Sneakers</h3>
+        <form (ngSubmit)="yourSneakersFromDatabase()">
+          <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="e.g. Jordan 1 Retro Off-White Chicago" [formControl]="yourSneakerSearch" />
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div class="results">
+        <div class="row">
+          <section class="row">
+            <div *ngIf="yourDatabaseLoading">
+              <mat-spinner></mat-spinner>
+            </div>
+
+            <div *ngFor="let sneaker of yourResult$" class="row">
+              <mat-checkbox (change)="onYourCheck($event, sneaker)"
+                labelPosition="after">
+                <div class="postCard">
+                  <h3 class="title">{{sneaker.title}}</h3>
+                  <img class="postPhoto" src="{{sneaker.media.thumbUrl}}" />
+
+                </div>
+              </mat-checkbox>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="cash">
+
+        <div>
+          <p>Add Cash: <b>{{addCash | currency:'USD'}}</b></p>
+        </div>
+        <mat-slider   horizontal
+                      [(value)]="addCash"
+                      (change)="onCashAdd($event)"
+                      step="10"
+                      thumbLabel
+                      max="500"
+          ></mat-slider>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3 class="sub">Your Offer</h3>
+      <div class="offer">
+        <div class="row">
+          <section class="row">
+            <div *ngIf="yourOfferLoading">
+              <mat-spinner></mat-spinner>
+            </div>
+
+            <div *ngFor="let s of yourOffer" class="row">
+                <div class="offerCard">
+                  <h3 (click)="removeYourSneaker(s)" class="title off">{{s.name}}</h3>
+                  <img class="postPhoto" src="{{s.productImageUrl}}" />
+                  Condition:
+                  <mat-slider
+                    (change)="setTradePercentage()"
+                    [(value)]="s.condition"
+                    thumbLabel
+                    min="1"
+                    max="10"
+                    step="1"
+                  ></mat-slider>
+                </div>
+            </div>
+
+            <div *ngIf="addCash">
+              <h3>+ {{addCash | currency:'USD'}}</h3>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="middle">
+      <div class="outerBar">
+        <span class="innerBar" [style.height.%]="tradePercentageHeight" >
+        </span>
+      </div>
+      <img #arrow src="assets/images/trade_arrows.png" class="arrows"/>
+    </div>
+
+    <div class="box">
+      <h3 class="sub">Their Offer</h3>
+      <div class="offer">
+        <div class="row">
+          <section class="row">
+            <div *ngFor="let s of theirOffer" class="row">
+                <div class="offerCard">
+                  <h3 (click)="removeTheirSneaker(s)" class="title off">{{s.name}}</h3>
+                  <img class="postPhoto" src="{{s.productImageUrl}}" />
+                  Condition:
+                  <mat-slider
+                    (change)="setTradePercentage()"
+                    [(value)]="s.condition"
+                    thumbLabel
+                    min="1"
+                    max="10"
+                    step="1"
+                  ></mat-slider>
+
+                </div>
+            </div>
+
+            <div *ngIf="askCash">
+              <h3>+ {{askCash | currency:'USD'}}</h3>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div>
+        <h3 class="sub">Add Their Sneakers</h3>
+        <form (ngSubmit)="theirSneakersFromDatabase()">
+          <mat-form-field appearance="outline">
+            <!-- <mat-label>Search</mat-label> -->
+            <input matInput placeholder="e.g. Nike SB Dunk Low Ben & Jerry's" [formControl]="theirSneakerSearch" />
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div class="results">
+        <div class="row">
+          <section class="row">
+            <div *ngIf="theirDatabaseLoading">
+              <mat-spinner></mat-spinner>
+            </div>
+
+            <div *ngFor="let s of theirResult$" class="row">
+              <mat-checkbox (change)="onTheirCheck($event, s)"
+                labelPosition="after">
+                <div class="postCard">
+                  <h3 class="title">{{s.title}}</h3>
+                  <img class="postPhoto" src="{{s.media.thumbUrl}}" />
+
+                </div>
+              </mat-checkbox>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="cash">
+
+        <div>
+          <p>Add Cash: <b>{{askCash | currency:'USD'}}</b></p>
+        </div>
+        <mat-slider   horizontal
+                      [(value)]="askCash"
+                      (change)="onCashAsk($event)"
+                      step="10"
+                      thumbLabel
+                      max="500"
+          ></mat-slider>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bottomButton">
+    <p class="tradeLikelihood"
+     [ngClass]="{'notLikely':(tradePercentageHeight < 50), 'veryLikely':(tradePercentageHeight > 75)}"
+     >Estimated Trade Likelihood: {{tradePercentageHeight}}%</p>
+     <div>
+       <button mat-raised-button color="primary" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
+     </div>
+  </div>
+
+</div>

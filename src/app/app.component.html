@@ -1,0 +1,5 @@
+<main [@routeAnimations]="prepareRoute(outlet)" class="content">
+  <div class="containerOffset">
+    <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet>
+  </div>
+</main>

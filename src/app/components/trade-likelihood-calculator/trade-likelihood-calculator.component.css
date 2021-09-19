@@ -1,0 +1,425 @@
+.c {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 80px; */
+  margin-top: 20px;
+  margin-left: 0vw;
+  width: 96vw;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  /* margin-top: 20px; */
+  margin-bottom: -60px;
+}
+
+.banner h1 {
+  padding-bottom: 30px;
+}
+
+.banner h3 {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: grey;
+  font-size: 20px;
+}
+
+.description {
+  padding: 50px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  max-width: 460px;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 20vw;
+  margin-bottom: -20px;
+}
+
+.mobile {
+  visibility: hidden;
+}
+
+.middle {
+  margin: 0 1vw 0 1vw;
+}
+
+.cash {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.sub {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+.cashBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+  margin-left: -10vw;
+}
+
+.cashBar p{
+  margin-bottom: -2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+mat-icon{
+  font-size: 40px;
+  margin-left: -15px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.box {
+  max-width: 21vw;
+}
+
+.box h3 {
+  max-width: 20vw;
+}
+
+.results {
+  height : 60vh;
+  width : 20vw;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #F0F0F0;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding-left: 40px;
+}
+
+.offer {
+  height : 60vh;
+  width : 16vw;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #F0F0F0;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding-left: 40px;
+}
+
+.name {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.postCard {
+  margin: 10px;
+  width: 14vw;
+  white-space: normal;
+  /* background-color: grey; */
+}
+
+.offerCard {
+  margin: 8px 20px 8px 20px;
+  width: 14vw;
+  white-space: normal;
+  /* background-color: grey; */
+}
+
+.postCard p {
+  margin-top: -4px;
+  margin-bottom: 8px;
+  margin-left: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+}
+
+.offerCard p {
+  margin-top: -4px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+}
+
+.postPhoto {
+  width: 12vw;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.off {
+  color: black;
+  font-weight: 400;
+}
+
+.off:hover {
+  background-color: rgba(128,0,0,.1);
+}
+
+.bottomButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tradeLikelihood {
+  font-family: 'Rubik', sans-serif;
+  margin-bottom: -8px;
+  color: #696969;
+  font-weight: 500;
+}
+
+.notLikely {
+  color: red;
+}
+
+.veryLikely {
+  color: green;
+}
+
+.postCard:hover .title {
+  color: black;
+}
+
+.innerBar {
+  background-color: #32B054;
+  height: 150px;
+  width: 22px;
+  border-radius: 20px;
+  transition: height ease 2s;
+}
+
+.arrows {
+  position: absolute;
+  height: 122px;
+  width: 110px;
+  margin-top: -220px;
+  margin-left: -43px;
+  z-index: -1;
+
+  animation: spin 2.4s ease-in-out;
+  transition: all 1.6s ease-in-out;
+  /* transition: reset 0s; */
+}
+
+.overlay {
+  position: absolute;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  height: 28%;
+  width: 14%;
+  opacity: 0;
+  z-index: 3;
+  transition: .3s ease;
+  background-color: rgb(128,0,0);
+}
+
+.overlay:hover {
+  opacity: .1;
+}
+
+@keyframes spin {
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+
+.rotate {
+  -webkit-transform: rotate(360deg);
+  transform:rotate(360deg);
+}
+
+.reset {
+  -webkit-transform: rotate(0deg);
+  transform:rotate(0deg);
+}
+
+.outerBar {
+  background-color: #F0F0F0;
+  height: 300px;
+  width: 24px;
+  border-radius: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media (max-width : 1060px){
+  .middle {
+    margin: 0 1vw 0 -1vw;
+  }
+}
+
+@media (max-width : 980px){
+  .postCard {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+  .arrows {
+    visibility: hidden;
+  }
+}
+
+@media (max-width : 720px){
+  .c {
+    flex-direction: column;
+    margin-left: 0vw;
+  }
+
+  .banner {
+    margin-top: 20px;
+    flex-direction: column;
+    margin-bottom: -80px;
+  }
+
+  .banner img {
+    width: 80%;
+  }
+
+  .outerBar{
+    transform: rotate(90deg);
+    /* visibility: hidden; */
+    margin-top: -12px;
+  }
+
+  .arrows {
+    visibility: visible;
+    transform: rotate(90deg);
+    margin-top: -208px;
+  }
+
+  .bottomButton {
+    margin-bottom: 40px;
+  }
+
+  .mobile {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 300px;
+  }
+
+  .mobile button {
+    margin-bottom: 40px;
+  }
+
+  .postCard {
+    margin: 10px;
+    width: 54vw;
+  }
+
+  .box h3 {
+    margin-top: 8px;
+    max-width: 70vw;
+  }
+
+  .offerCard {
+    margin: 10px;
+    width: 54vw;
+  }
+
+  .postPhoto {
+    width: 160px;
+  }
+
+  .results {
+    height : 232px;
+    width : 90vw;
+    border-radius: 16px;
+    margin-top: 0px;
+    overflow-x: auto;
+    overflow-y: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 60px;
+  }
+
+  .offer {
+    height : 200px;
+    width : 90vw;
+    border-radius: 16px;
+    margin-top: 0px;
+    overflow-x: auto;
+    overflow-y: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 60px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  .box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100vw;
+  }
+
+  @keyframes spin {
+    100% { -webkit-transform: rotate(450deg); transform:rotate(450deg); }
+  }
+
+  .middle {
+    margin-top: -60px;
+    margin-bottom: -60px;
+  }
+
+  mat-form-field {
+    width: 90vw;
+    margin-bottom: -12px;
+  }
+
+}
+
+mat-checkbox {
+  margin-top: 8px;
+  margin-right: 10px;
+  margin-left: 2vw;
+}
