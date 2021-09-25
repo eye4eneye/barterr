@@ -1,3 +1,8 @@
+.barterr-blue {
+  background-color: #027cff;
+  color: #fff;
+}
+
 .c {
   display: flex;
   flex-direction: row;
@@ -301,8 +306,14 @@ button {
 }
 
 @media (max-width : 720px){
+  .bLogo {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
   .c {
     flex-direction: column;
+    margin-top: 15px;
     margin-left: 0vw;
   }
 

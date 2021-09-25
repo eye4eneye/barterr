@@ -1,12 +1,12 @@
 <div class="outer">
   <div class="banner">
-    <img src="assets/images/barterrLogo2.jpg" width="400px" height="400px" />
+    <img src="assets/images/barterrLogo.png" width="350px" height="350px" class="bLogo" />
     <div class="description">
       <h1>Sneaker Trading, Made Simple</h1>
       <h3>Test your offers with our trading algorithm,
         to determine a fair and equal sneaker trade.</h3>
-        <div>
-          <button mat-raised-button color="primary" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
+        <div style="margin-bottom: 20px;">
+          <button mat-raised-button class="barterr-blue" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
         </div>
     </div>
   </div>
@@ -189,7 +189,7 @@
      [ngClass]="{'notLikely':(tradePercentageHeight < 50), 'veryLikely':(tradePercentageHeight > 75)}"
      >Estimated Trade Likelihood: {{tradePercentageHeight}}%</p>
      <div>
-       <button mat-raised-button color="primary" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
+       <button mat-raised-button class="barterr-blue" (click)="toSignUp()">Sign Up For Early Access to our App!</button>
      </div>
   </div>
 

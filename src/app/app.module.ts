@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientJsonpModule } from "@angular/common/http";
+
 
 import { AppComponent } from './app.component';
 import { TradeLikelihoodCalculatorComponent } from './components/trade-likelihood-calculator/trade-likelihood-calculator.component';
@@ -27,7 +29,8 @@ import { ErrorAlertComponent } from './components/error-alert/error-alert.compon
     ReactiveFormsModule,
     AppRoutingModule, 
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientJsonpModule
   ],
   providers: [SneakersService],
   bootstrap: [AppComponent]
