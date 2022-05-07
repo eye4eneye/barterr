@@ -299,4 +299,8 @@ export class TradeLikelihoodCalculatorComponent implements OnInit {
     this.router.navigate(['/sneaker-catalog']);
   }
 
+  joinDiscord() {
+    window.open('https://discord.gg/cx4BBxda7y', '_blank');
+  }
+
 }

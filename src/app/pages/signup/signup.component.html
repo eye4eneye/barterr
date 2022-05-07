@@ -26,40 +26,17 @@
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
       </style>
       <div id="mc_embed_signup" style="display: flex; flex-direction: column;">
-        <form (ngSubmit)="newSubscriber()"
-          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-          target="_blank" novalidate>
+        <form (ngSubmit)="newSubscriber()" method="post" id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
-            <h2>Subscribe</h2>
-            <mat-form-field appearance="outline">
-              <mat-label>Email Address</mat-label>
-              <input
-                matInput
-                [formControl]="email"
-                placeholder="you@barterr.com"
-                name="EMAIL"
-              />
-            </mat-form-field>
+            <h2>Sign Up For Early Access</h2>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+              </label>
+              <input matInput [formControl]="email" placeholder="you@barterr.com" name="EMAIL" class="required email"
+                id="mce-EMAIL" />
+            </div>
             <div style="margin: 10px;"></div>
-            <mat-form-field appearance="outline">
-              <mat-label>First Name</mat-label>
-              <input
-                matInput
-                [formControl]="firstname"
-                placeholder="first name"
-                name="FIRSTNAME"
-              />
-            </mat-form-field>
-            <div style="margin: 10px;"></div>
-            <mat-form-field appearance="outline">
-              <mat-label>Last Name</mat-label>
-              <input
-                matInput
-                [formControl]="lastname"
-                placeholder="last name"
-                name="LASTNAME"
-              />
-            </mat-form-field>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display:none"></div>
               <div class="response" id="mce-success-response" style="display:none"></div>

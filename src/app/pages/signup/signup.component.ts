@@ -21,8 +21,6 @@ export class SignupComponent implements OnInit {
   errorMessage: string = "";  
 
   email = new FormControl("", [Validators.required, Validators.email]);
-  firstname = new FormControl();
-  lastname = new FormControl();
 
 
 
@@ -30,8 +28,6 @@ export class SignupComponent implements OnInit {
   ) { }
 
   newSubscriber() {
-    console.log("Hello World");
-
     this.errorMessage = "";
 
     if (this.email.status === "VALID") {

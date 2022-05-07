@@ -3,6 +3,11 @@
   color: #fff;
 }
 
+.discord-purple {
+  background-color: #7289DA;
+  color: #fff;
+}
+
 .c {
   display: flex;
   flex-direction: row;
